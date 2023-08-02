@@ -6,7 +6,7 @@ This project deals with the processing of Hyperspectral Images (HSI), particular
 
 This dataset is composed of 22,500 sample pixels derived from eight ground-truth classes. These classes include “Corn,” two variants of “Broccoli,” “Grapes,” and four distinct types of “Lettuce.” Each class is represented by different colors in the accompanied figure. It's worth noting that there's no ground truth information for the pixels colored in dark blue.
 
-**Objective:** The core aim is to identify homogeneous regions within the Salinas HSI. Only pixels with a nonzero class label are utilised in this endeavour. The data used can be located in the [Salinas_Data.mat](dataset/Salinas_Data.m) file which houses:
+**Objective:** The core aim is to identify homogeneous regions within the Salinas HSI. Only pixels with a nonzero class label are utilised in this endeavour. The data used can be located in the [Salinas_Data.mat](../dataset/Salinas_Data.m) file which houses:
 - A 150x150x204 three-dimensional matrix titled “Salinas_Image” (the Salinas hypercube).
 - A 150x150 two-dimensional image titled “Salinas_Labels” (providing the class label for each pixel).
 
@@ -29,12 +29,12 @@ The methodology can be summarised as follows:
 1. **Principal Component Analysis (PCA)**: Initially, a PCA was executed on the hyperspectral image to reduce dimensionality and capture the most significant features; the explainable variance threshold was set to 95%.
   
 2. **Clustering**: The objective is to discern homogeneous regions in the Salinas HSI by concentrating solely on pixels that have accessible class label data. The approach involves:
-  - Executing the aforementioned algorithms under different parameters to identify the homogeneous regions, and highlighting any complications discovered.
-  - Qualitatively authenticating the results derived from each algorithm, based on the pixel label information and any insights gained from the image (including insights from the PCA).
+   - Executing the aforementioned algorithms under different parameters to identify the homogeneous regions, and highlighting any complications discovered.
+   - Qualitatively authenticating the results derived from each algorithm, based on the pixel label information and any insights gained from the image (including insights from the PCA).
   
 3. **Optimal Number of Clusters**:
    - The Calinski-Harabasz criterion was employed to determine the ideal number of clusters.
-   - The 'elbow' method was also utilized as a supplementary approach to verify the optimal cluster count.
+   - The 'elbow' method was also utilised as a supplementary approach to verify the optimal cluster count.
   
 4. **Validation**: Quantitatively corroborating the results using the labeling data.
 
@@ -57,6 +57,9 @@ Further insights can be found in the [report](report/main.pdf).
 ## Sample Output
 
 Qualitative algorithms' assessment:
+<p align="center">
+  <img src="output/overview.svg" alt="Image">
+</p>
 
 Quantitative algorithms' assessment:
 ```bash
