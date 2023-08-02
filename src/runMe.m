@@ -4,8 +4,11 @@
 %  This script makes use of the following provided functions:
 %
 %     rand_data_init.m
+%     rand_index.m
+%     distan.m
 %     k_means.m
 %     possibi.m
+%     nmi.m
 %
 %  Two further functions, written by the authors, were also used
 %  for editting plot variables, namely:
@@ -22,7 +25,7 @@ clear
 format compact
 close all
 
-load Salinas_Data
+load ../dataset/Salinas_Data
 
 % Size of the Salinas cube
 [p, n, l] = size(Salinas_Image);
@@ -239,9 +242,9 @@ cl_label_tot            = zeros(p*n, 1);
 cl_label_tot(existed_L) = cl_label4;
 im_cl_label5            = reshape(cl_label_tot, p, n);
 
-% Print dendogram.
+% Print dendrogram.
 figure;
-dendogram(Z, 0);
+dendrogram(Z, 0);
 set(gca, 'xticklabel', []);
 
 
@@ -254,9 +257,9 @@ cl_label_tot            = zeros(p*n, 1);
 cl_label_tot(existed_L) = cl_label5;
 im_cl_label6            = reshape(cl_label_tot, p, n);
 
-% Print dendogram.
+% Print dendrogram.
 figure;
-dendogram(Z1, 0);
+dendrogram(Z1, 0);
 set(gca, 'xticklabel', []);
 
 
@@ -269,9 +272,9 @@ cl_label_tot            = zeros(p*n, 1);
 cl_label_tot(existed_L) = cl_label6;
 im_cl_label7            = reshape(cl_label_tot, p, n);
 
-% Print dendogram.
+% Print dendrogram.
 figure;
-dendogram(Z2, 0);
+dendrogram(Z2, 0);
 set(gca, 'xticklabel', []);
 
 %% Qualitative Evaluation
@@ -390,7 +393,7 @@ colorbar()
 for i = 1:numel(findobj('type', 'figure'))
     PlotDimensions(figure(i), 'centimeters', [15.747, 16], 12);
     ChangeInterpreter(figure(i), 'LaTeX');
-    exportgraphics(gcf, sprintf('plot%d.pdf', i), 'BackgroundColor', 'none');
+    exportgraphics(gcf, sprintf('../output/plot%d.pdf', i), 'BackgroundColor', 'none');
 end
 
 % Gather all the clustering labels.
