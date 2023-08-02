@@ -235,7 +235,6 @@ for i = 1:length(metrics)
 end
 
 fprintf('The best metric, for complete linkage, is %s with a cophenetic correlation coefficient of %f\n', best_metric, max_coph_corr);
-figure;
 
 cl_label4               = cluster(best_Z, 'maxclust', k);
 cl_label_tot            = zeros(p*n, 1);
@@ -393,7 +392,11 @@ colorbar()
 for i = 1:numel(findobj('type', 'figure'))
     PlotDimensions(figure(i), 'centimeters', [15.747, 16], 12);
     ChangeInterpreter(figure(i), 'LaTeX');
-    exportgraphics(gcf, sprintf('../output/plot%d.pdf', i), 'BackgroundColor', 'none');
+    if i == 7
+        Plot2LaTeX(figure(i), '..\output\overview')
+    else
+        exportgraphics(gcf, sprintf('../output/plot%d.pdf', i));
+    end
 end
 
 % Gather all the clustering labels.
