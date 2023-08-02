@@ -15,7 +15,7 @@ This dataset is composed of 22,500 sample pixels derived from eight ground-truth
 - **Matlab 2020a**: Principal software employed for data processing and clustering.
 - **Plot2LaTeX**: [Script](https://www.mathworks.com/matlabcentral/fileexchange/52700-plot2latex) that aids in creating figures and visual displays. Note: This script mandates [Inkscape](https://inkscape.org/download/) for execution.
 - **Clustering Algorithms**: Algorithms are procured from the textbook [Introduction to Pattern Recognition](https://github.com/pikrakis/Introduction-to-Pattern-Recognition-a-Matlab-Approach).
-- **Quantitative indices**: Scripts specifically designed to run Adjusted Rand Index (ARI) and Normalised Mutual Information (NMI).
+- **Quantitative indices**: Scripts specifically designed to run [Adjusted Rand Index (ARI)](https://www.mathworks.com/matlabcentral/fileexchange/49908-adjusted-rand-index) and [Normalised Mutual Information (NMI)](https://www.mathworks.com/matlabcentral/fileexchange/29047-normalized-mutual-information).
 
 ## Methodology
 
