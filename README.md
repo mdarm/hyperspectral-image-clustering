@@ -6,7 +6,7 @@ This project deals with the processing of Hyperspectral Images (HSI), particular
 
 This dataset is composed of 22,500 sample pixels derived from eight ground-truth classes. These classes include “Corn,” two variants of “Broccoli,” “Grapes,” and four distinct types of “Lettuce.” Each class is represented by different colors in the accompanied figure. It's worth noting that there's no ground truth information for the pixels colored in dark blue.
 
-**Objective:** The core aim is to identify homogeneous regions within the Salinas HSI. Only pixels with a nonzero class label are utilised in this endeavour. The data used can be located in the [Salinas_Data.mat](../dataset/Salinas_Data.m) file which houses:
+**Objective:** The core aim is to identify homogeneous regions within the Salinas HSI. Only pixels with a nonzero class label are utilised in this endeavour. The data used can be located in the [Salinas_Data.mat](dataset/Salinas_Data.mat) file which houses:
 - A 150x150x204 three-dimensional matrix titled “Salinas_Image” (the Salinas hypercube).
 - A 150x150 two-dimensional image titled “Salinas_Labels” (providing the class label for each pixel).
 
