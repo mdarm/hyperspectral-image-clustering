@@ -1,14 +1,14 @@
-# Hyperspectral Image Processing for Salinas Valley
+# Hyperspectral Image Clustering for Salinas Valley
 
 ## Overview
 
-This project deals with the processing of Hyperspectral Images (HSI), particularly focusing on the “Salinas” HSI. This HSI captures the Salinas valley located in California, USA. The captured HSI has a spatial resolution of 150x150 and includes 204 spectral bands, ranging from 0.2µm – 2.4µm. The spatial resolution stands at 3.7m, categorising the HSI as a 150x150x204 cube. 
+This project deals with the processing of Hyperspectral Images (HSI), particularly focusing on the â€œSalinasâ€ HSI. This HSI captures the Salinas valley located in California, USA. The captured HSI has a spatial resolution of 150x150 and includes 204 spectral bands, ranging from 0.2Âµm â€“ 2.4Âµm. The spatial resolution stands at 3.7m, categorising the HSI as a 150x150x204 cube. 
 
-This dataset is composed of 22,500 sample pixels derived from eight ground-truth classes. These classes include “Corn,” two variants of “Broccoli,” “Grapes,” and four distinct types of “Lettuce.” Each class is represented by different colors in the accompanied figure. It's worth noting that there's no ground truth information for the pixels colored in dark blue.
+This dataset is composed of 22,500 sample pixels derived from eight ground-truth classes. These classes include â€œCorn,â€ two variants of â€œBroccoli,â€ â€œGrapes,â€ and four distinct types of â€œLettuce.â€ Each class is represented by different colors in the accompanied figure. It's worth noting that there's no ground truth information for the pixels colored in dark blue.
 
 **Objective:** The core aim is to identify homogeneous regions within the Salinas HSI. Only pixels with a nonzero class label are utilised in this endeavour. The data used can be located in the [Salinas_Data.mat](dataset/Salinas_Data.mat) file which houses:
-- A 150x150x204 three-dimensional matrix titled “Salinas_Image” (the Salinas hypercube).
-- A 150x150 two-dimensional image titled “Salinas_Labels” (providing the class label for each pixel).
+- A 150x150x204 three-dimensional matrix titled â€œSalinas_Imageâ€ (the Salinas hypercube).
+- A 150x150 two-dimensional image titled â€œSalinas_Labelsâ€ (providing the class label for each pixel).
 
 ## Dependencies
 
@@ -46,7 +46,7 @@ The methodology can be summarised as follows:
 
 - **Probabilistic C-means**: Built on the premise that data aligns with a Gaussian mixture model, this algorithm exhibited the best results when assuming a diagonal covariance matrix for the clusters. Yet, the best result, which correlated with 11 clusters, was externally validated as incorrect.
 
-- **Complete-link method**: Though revealing certain clusters, they lacked homogeneity due to the method’s inherent nature.
+- **Complete-link method**: Though revealing certain clusters, they lacked homogeneity due to the methodâ€™s inherent nature.
 
 - **WPGMC Algorithm**: Showed inefficacy in identifying compact clusters, mainly due to its tendency to produce clusters of similar sizes and shapes.
 
