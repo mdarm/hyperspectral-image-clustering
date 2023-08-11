@@ -2,9 +2,9 @@
 
 ## Overview
 
-This project deals with the processing of Hyperspectral Images (HSI), particularly focusing on the “Salinas” HSI. This HSI captures the Salinas valley located in California, USA. The captured HSI has a spatial resolution of 150x150 and includes 204 spectral bands, ranging from 0.2µm – 2.4µm. The spatial resolution stands at 3.7m, categorising the HSI as a 150x150x204 cube. 
+This project deals with the processing of Hyperspectral Images (HSI), particularly focusing on the “Salinas” HSI. This HSI captures the Salinas valley located in California and has a spatial resolution of 150x150, and includes 204 spectral bands, ranging from 0.2µm – 2.4µm. The spatial resolution stands at 3.7m, categorising the HSI as a 150x150x204 cube. 
 
-This dataset is composed of 22,500 sample pixels derived from eight ground-truth classes. These classes include “Corn,” two variants of “Broccoli,” “Grapes,” and four distinct types of “Lettuce.” Each class is represented by different colors in the accompanied figure. It's worth noting that there's no ground truth information for the pixels colored in dark blue.
+The dataset as a whole is composed of 22,500 sample pixels derived from eight ground-truth classes. These classes include “Corn,” two variants of “Broccoli,” “Grapes,” and four distinct types of “Lettuce.” Each class is represented by different colors in the accompanied figure. No ground truth information for the pixels colored in dark blue.
 
 **Objective:** The core aim is to identify homogeneous regions within the Salinas HSI. Only pixels with a nonzero class label are utilised in this endeavour. The data used can be located in the [Salinas_Data.mat](dataset/Salinas_Data.mat) file which houses:
 - A 150x150x204 three-dimensional matrix titled “Salinas_Image” (the Salinas hypercube).
@@ -13,15 +13,15 @@ This dataset is composed of 22,500 sample pixels derived from eight ground-truth
 ## Dependencies
 
 - **Matlab 2020a**: Principal software employed for data processing and clustering.
-- **Plot2LaTeX**: [Script](https://www.mathworks.com/matlabcentral/fileexchange/52700-plot2latex) that aids in creating figures and visual displays. Note: This script mandates [Inkscape](https://inkscape.org/download/) for execution.
+- **Plot2LaTeX**: [Script](https://www.mathworks.com/matlabcentral/fileexchange/52700-plot2latex) that aids in creating figures and visual displays. Note: This script requires [Inkscape](https://inkscape.org/download/) for its execution.
 - **Clustering Algorithms**: Algorithms are procured from the textbook [Introduction to Pattern Recognition](https://github.com/pikrakis/Introduction-to-Pattern-Recognition-a-Matlab-Approach).
 - **Quantitative indices**: Scripts specifically designed to run [Adjusted Rand Index (ARI)](https://www.mathworks.com/matlabcentral/fileexchange/49908-adjusted-rand-index) and [Normalised Mutual Information (NMI)](https://www.mathworks.com/matlabcentral/fileexchange/29047-normalized-mutual-information).
 
 ## Methodology
 
-The research focuses on juxtaposing the efficiency of:
+The approach used focuses on juxtaposing the efficiency of:
 
-- Cost function optimization clustering algorithms such as k-means, fuzzy c-means, possibilistic c-means, and the probabilistic clustering algorithm (with each cluster modeled by a normal distribution).
+- Cost function optimisation clustering algorithms such as k-means, fuzzy c-means, possibilistic c-means, and the probabilistic clustering algorithm (with each cluster modeled by a normal distribution).
 - Hierarchical algorithms like Complete-link, WPGMC, and Ward algorithms.
 
 The methodology can be summarised as follows:
@@ -52,7 +52,7 @@ The methodology can be summarised as follows:
 
 - **Ward's Method**: Its efficiency closely parallels that of k-means clustering. Even though k-means is a better minimizer when provided with suitable initial centroids, Ward's method proved more accurate in discerning clusters of varied sizes or those irregularly spaced.
 
-Further insights can be found in the [report](report/main.pdf). 
+Further insights, and parameters of the clustering-algorithms used, can be found in the [report](report/main.pdf). 
 
 ## Sample Output
 
@@ -65,11 +65,11 @@ Quantitative algorithms' assessment:
 ```bash
          Clustering_Method         Adjusted Rand Index    Normalised Mutual Information
     ___________________________    ___________________    _____________________________
-    {'K-means'                }          0.68357                     0.7721           
+    {'K-means'                }          0.68357                     0.77210           
     {'Fuzzy C-means'          }          0.69157                     0.77522           
-    {'Possibilistic C-means'  }          0.3924                      0.57           
+    {'Possibilistic C-means'  }          0.39240                     0.57000           
     {'Probabilistic'          }          0.78124                     0.83518           
-    {'Hierarchical (complete)'}          0.5891                      0.71878           
+    {'Hierarchical (complete)'}          0.58910                     0.71878           
     {'Hierarchical (WPGMC)'   }          0.43998                     0.65373           
     {'Hierarchical (ward)'    }          0.65453                     0.76373  
 ```
